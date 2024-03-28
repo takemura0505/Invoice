@@ -10,7 +10,6 @@ import SwiftUI
 struct HomeView: View {
     
     @StateObject var viewModel = InvoiceViewModel(context: PersistenceController.shared.container.viewContext)
-    @State var invoices: [Invoice] = []
     
     var body: some View {
         NavigationView {
@@ -30,7 +29,7 @@ struct HomeView: View {
 extension HomeView {
     
     private var listView: some View {
-        List(invoices, id: \.self) { invoice in
+        List(viewModel.invoicesData, id: \.self) { invoice in
             VStack {
                 Text(invoice.partner ?? "")
                 Text(invoice.subject ?? "")
@@ -41,7 +40,7 @@ extension HomeView {
     
     private var plusButton: some View {
         Button(action: {
-            
+            viewModel.addInvoice()
         }) {
             Image(systemName: "plus")
         }
