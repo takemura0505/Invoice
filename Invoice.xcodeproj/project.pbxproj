@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		876DE3552BB4558000B1FE81 /* InvoiceApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 876DE3542BB4558000B1FE81 /* InvoiceApp.swift */; };
-		876DE3572BB4558000B1FE81 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 876DE3562BB4558000B1FE81 /* ContentView.swift */; };
 		876DE3592BB4558100B1FE81 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 876DE3582BB4558100B1FE81 /* Assets.xcassets */; };
 		876DE35C2BB4558100B1FE81 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 876DE35B2BB4558100B1FE81 /* Preview Assets.xcassets */; };
 		876DE35E2BB4558100B1FE81 /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = 876DE35D2BB4558100B1FE81 /* Persistence.swift */; };
@@ -16,6 +15,7 @@
 		876DE36B2BB4558100B1FE81 /* InvoiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 876DE36A2BB4558100B1FE81 /* InvoiceTests.swift */; };
 		876DE3752BB4558100B1FE81 /* InvoiceUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 876DE3742BB4558100B1FE81 /* InvoiceUITests.swift */; };
 		876DE3772BB4558100B1FE81 /* InvoiceUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 876DE3762BB4558100B1FE81 /* InvoiceUITestsLaunchTests.swift */; };
+		876DE3882BB54BF800B1FE81 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 876DE3872BB54BF800B1FE81 /* HomeView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -38,7 +38,6 @@
 /* Begin PBXFileReference section */
 		876DE3512BB4558000B1FE81 /* Invoice.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Invoice.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		876DE3542BB4558000B1FE81 /* InvoiceApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InvoiceApp.swift; sourceTree = "<group>"; };
-		876DE3562BB4558000B1FE81 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		876DE3582BB4558100B1FE81 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		876DE35B2BB4558100B1FE81 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		876DE35D2BB4558100B1FE81 /* Persistence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Persistence.swift; sourceTree = "<group>"; };
@@ -48,6 +47,7 @@
 		876DE3702BB4558100B1FE81 /* InvoiceUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = InvoiceUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		876DE3742BB4558100B1FE81 /* InvoiceUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InvoiceUITests.swift; sourceTree = "<group>"; };
 		876DE3762BB4558100B1FE81 /* InvoiceUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InvoiceUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		876DE3872BB54BF800B1FE81 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,8 +99,8 @@
 			isa = PBXGroup;
 			children = (
 				876DE3542BB4558000B1FE81 /* InvoiceApp.swift */,
-				876DE3562BB4558000B1FE81 /* ContentView.swift */,
 				876DE3582BB4558100B1FE81 /* Assets.xcassets */,
+				876DE3872BB54BF800B1FE81 /* HomeView.swift */,
 				876DE35D2BB4558100B1FE81 /* Persistence.swift */,
 				876DE35F2BB4558100B1FE81 /* Invoice.xcdatamodeld */,
 				876DE35A2BB4558100B1FE81 /* Preview Content */,
@@ -264,8 +264,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				876DE35E2BB4558100B1FE81 /* Persistence.swift in Sources */,
+				876DE3882BB54BF800B1FE81 /* HomeView.swift in Sources */,
 				876DE3612BB4558100B1FE81 /* Invoice.xcdatamodeld in Sources */,
-				876DE3572BB4558000B1FE81 /* ContentView.swift in Sources */,
 				876DE3552BB4558000B1FE81 /* InvoiceApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
