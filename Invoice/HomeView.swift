@@ -8,9 +8,13 @@
 import SwiftUI
 
 struct HomeView: View {
+    
+    @State var invoices: [Invoice] = []
+    
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        listView
     }
+    
 }
 
 #Preview {
@@ -19,6 +23,14 @@ struct HomeView: View {
 
 extension HomeView {
     
-    
+    private var listView: some View {
+        List(invoices, id: \.self) { invoice in
+            VStack {
+                Text(invoice.partner ?? "")
+                Text(invoice.subject ?? "")
+                Text(invoice.paymentDue?.lowercased() ?? "")
+            }
+        }
+    }
     
 }
