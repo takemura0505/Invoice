@@ -1,5 +1,5 @@
 //
-//  InvoiceDataModel.swift
+//  InvoiceViewModel.swift
 //  Invoice
 //
 //  Created by 竹村はるうみ on 2024/03/28.
@@ -8,7 +8,7 @@
 import CoreData
 import SwiftUI
 
-class InvoiceDataModel: ObservableObject {
+class InvoiceViewModel: ObservableObject {
     
     private var context: NSManagedObjectContext
     @Published var invoicesData: [Invoice] = []
