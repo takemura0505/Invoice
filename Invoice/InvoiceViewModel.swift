@@ -23,6 +23,9 @@ class InvoiceViewModel: ObservableObject {
         let id = UUID().uuidString
         // ここでデータを追加
         newInvoice.id = id
+        newInvoice.partner = "取引先未入力"
+        newInvoice.subject = "件名"
+        newInvoice.paymentDue = "入金期日未定"
         do {
             try context.save()
             fetchInvoices()

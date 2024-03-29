@@ -30,10 +30,13 @@ extension HomeView {
     
     private var listView: some View {
         List(viewModel.invoicesData, id: \.self) { invoice in
-            VStack {
+            VStack(alignment: .leading) {
                 Text(invoice.partner ?? "")
+                    .font(.title3.bold())
                 Text(invoice.subject ?? "")
+                    .font(.body)
                 Text(invoice.paymentDue?.lowercased() ?? "")
+                    .font(.body)
             }
         }
     }
