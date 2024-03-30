@@ -17,6 +17,7 @@
 		876DE3772BB4558100B1FE81 /* InvoiceUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 876DE3762BB4558100B1FE81 /* InvoiceUITestsLaunchTests.swift */; };
 		876DE3882BB54BF800B1FE81 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 876DE3872BB54BF800B1FE81 /* HomeView.swift */; };
 		8797254D2BB5B24500B0A95D /* InvoiceViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8797254C2BB5B24500B0A95D /* InvoiceViewModel.swift */; };
+		8797254F2BB7F75E00B0A95D /* InvoiceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8797254E2BB7F75E00B0A95D /* InvoiceView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -50,6 +51,7 @@
 		876DE3762BB4558100B1FE81 /* InvoiceUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InvoiceUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		876DE3872BB54BF800B1FE81 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		8797254C2BB5B24500B0A95D /* InvoiceViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InvoiceViewModel.swift; sourceTree = "<group>"; };
+		8797254E2BB7F75E00B0A95D /* InvoiceView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InvoiceView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -103,6 +105,7 @@
 				876DE3542BB4558000B1FE81 /* InvoiceApp.swift */,
 				876DE3582BB4558100B1FE81 /* Assets.xcassets */,
 				876DE3872BB54BF800B1FE81 /* HomeView.swift */,
+				8797254E2BB7F75E00B0A95D /* InvoiceView.swift */,
 				8797254C2BB5B24500B0A95D /* InvoiceViewModel.swift */,
 				876DE35D2BB4558100B1FE81 /* Persistence.swift */,
 				876DE35F2BB4558100B1FE81 /* Invoice.xcdatamodeld */,
@@ -268,6 +271,7 @@
 			files = (
 				876DE35E2BB4558100B1FE81 /* Persistence.swift in Sources */,
 				876DE3882BB54BF800B1FE81 /* HomeView.swift in Sources */,
+				8797254F2BB7F75E00B0A95D /* InvoiceView.swift in Sources */,
 				876DE3612BB4558100B1FE81 /* Invoice.xcdatamodeld in Sources */,
 				876DE3552BB4558000B1FE81 /* InvoiceApp.swift in Sources */,
 				8797254D2BB5B24500B0A95D /* InvoiceViewModel.swift in Sources */,

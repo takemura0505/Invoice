@@ -31,14 +31,16 @@ extension HomeView {
     private var listView: some View {
         List {
             ForEach(viewModel.invoicesData.indices, id: \.self) { index in
+                NavigationLink(destination: InvoiceView()) {
                 let invoice = viewModel.invoicesData[index]
-                VStack(alignment: .leading) {
-                    Text(invoice.partner ?? "")
-                        .font(.title3.bold())
-                    Text(invoice.subject ?? "")
-                        .font(.body)
-                    Text(invoice.paymentDue?.lowercased() ?? "")
-                        .font(.body)
+                    VStack(alignment: .leading) {
+                        Text(invoice.partner ?? "")
+                            .font(.title3.bold())
+                        Text(invoice.subject ?? "")
+                            .font(.body)
+                        Text(invoice.paymentDue?.lowercased() ?? "")
+                            .font(.body)
+                    }
                 }
             }
             .onDelete(perform: deleteItem)
