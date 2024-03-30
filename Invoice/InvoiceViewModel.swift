@@ -44,4 +44,24 @@ class InvoiceViewModel: ObservableObject {
         }
     }
     
+    func deleteInvoice(id: String) {
+        let fetchRequest: NSFetchRequest<Invoice> = Invoice.fetchRequest()
+        fetchRequest.predicate = NSPredicate(format: "id == %@", id as CVarArg)
+        
+        do {
+            let results = try context.fetch(fetchRequest)
+            
+            if let invoiceToDelete = results.first {
+                context.delete(invoiceToDelete)
+                try context.save()
+                fetchInvoices()
+                UNUserNotificationCenter.current().removePendingNotificationRequests(withIdentifiers: [id])
+            } else {
+                print("No Invoice found with the given ID")
+            }
+        } catch {
+            print("Error deleting invoice: \(error)")
+        }
+    }
+    
 }
