@@ -29,15 +29,19 @@ struct HomeView: View {
 extension HomeView {
     
     private var listView: some View {
-        List(viewModel.invoicesData, id: \.self) { invoice in
-            VStack(alignment: .leading) {
-                Text(invoice.partner ?? "")
-                    .font(.title3.bold())
-                Text(invoice.subject ?? "")
-                    .font(.body)
-                Text(invoice.paymentDue?.lowercased() ?? "")
-                    .font(.body)
+        List {
+            ForEach(viewModel.invoicesData.indices, id: \.self) { index in
+                let invoice = viewModel.invoicesData[index]
+                VStack(alignment: .leading) {
+                    Text(invoice.partner ?? "")
+                        .font(.title3.bold())
+                    Text(invoice.subject ?? "")
+                        .font(.body)
+                    Text(invoice.paymentDue?.lowercased() ?? "")
+                        .font(.body)
+                }
             }
+            .onDelete(perform: deleteItem)
         }
     }
     
@@ -47,6 +51,10 @@ extension HomeView {
         }) {
             Image(systemName: "plus")
         }
+    }
+    
+    private func deleteItem(at offsets: IndexSet) {
+        viewModel.deleteInvoices(at: offsets)
     }
     
 }

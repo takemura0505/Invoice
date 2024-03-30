@@ -64,4 +64,11 @@ class InvoiceViewModel: ObservableObject {
         }
     }
     
+    func deleteInvoices(at offsets: IndexSet) {
+        offsets.forEach { index in
+            let invoiceId = invoicesData[index].id ?? ""
+            deleteInvoice(id: invoiceId)
+        }
+    }
+    
 }
