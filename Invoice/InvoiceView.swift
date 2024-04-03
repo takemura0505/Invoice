@@ -9,6 +9,21 @@ import SwiftUI
 
 struct InvoiceView: View {
     
+    @State var billingDateTextField: String = ""
+    @State var branchNoTextField: String = ""
+    @State var breakdownTextField: String = ""
+    @State var companySealTextField: String = ""
+    @State var detailsTextField: String = ""
+    @State var invoiceNoTextField: String = ""
+    @State var logoTextField: String = ""
+    @State var memoTextField: String = ""
+    @State var partnerTextField: String = ""
+    @State var paymentDueTextField: String = ""
+    @State var paymentMethodTextField: String = ""
+    @State var remarksTextField: String = ""
+    @State var subjectTextField: String = ""
+    @State var titleTextField: String = ""
+    
     var body: some View {
         ScrollView {
             invoiceSheet
@@ -89,12 +104,24 @@ extension InvoiceView {
                 Text("登録番号")
                     .font(.system(size: 8))
             }
-            VStack(alignment: .trailing) {
-                Text("2024-01-01")
+            VStack(alignment: .trailing, spacing: 0) {
+                TextField("請求日を入力", text: $paymentDueTextField)
+                    .onSubmit {
+                        print("請求日")
+                    }
+                    .multilineTextAlignment(.trailing)
                     .font(.system(size: 8))
-                Text("00000000000")
+                TextField("請求書番号を入力", text: $invoiceNoTextField)
+                    .onSubmit {
+                        print("請求書番号")
+                    }
+                    .multilineTextAlignment(.trailing)
                     .font(.system(size: 8))
-                Text("0000000")
+                TextField("登録番号を入力", text: $branchNoTextField)
+                    .onSubmit {
+                        print("登録番号")
+                    }
+                    .multilineTextAlignment(.trailing)
                     .font(.system(size: 8))
             }
         }
