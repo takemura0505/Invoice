@@ -70,6 +70,7 @@ extension InvoiceView {
                     detailView
                     Spacer()
                     otherInfoView
+                        .padding(.top)
                 }
                 .padding(.horizontal, 10)
             }
@@ -94,6 +95,7 @@ extension InvoiceView {
         .padding(.leading)
         .padding(.trailing)
     }
+    
     private var invoiceInfoView: some View {
         HStack {
             VStack(alignment: .leading) {
@@ -106,21 +108,12 @@ extension InvoiceView {
             }
             VStack(alignment: .trailing, spacing: 0) {
                 TextField("請求日を入力", text: $paymentDueTextField)
-                    .onSubmit {
-                        print("請求日")
-                    }
                     .multilineTextAlignment(.trailing)
                     .font(.system(size: 8))
                 TextField("請求書番号を入力", text: $invoiceNoTextField)
-                    .onSubmit {
-                        print("請求書番号")
-                    }
                     .multilineTextAlignment(.trailing)
                     .font(.system(size: 8))
                 TextField("登録番号を入力", text: $branchNoTextField)
-                    .onSubmit {
-                        print("登録番号")
-                    }
                     .multilineTextAlignment(.trailing)
                     .font(.system(size: 8))
             }
@@ -156,7 +149,7 @@ extension InvoiceView {
                 HStack {
                     Text("件名")
                         .font(.caption2)
-                    Text("3月売り上げ分請求書")
+                    TextField("件名を入力", text: $titleTextField)
                         .font(.caption2)
                 }
             }
@@ -199,24 +192,30 @@ extension InvoiceView {
                         .frame(width: 75, height: 15)
                         .foregroundColor(.white)
                         .border(.black, width: 1)
-                    Text("0円")
-                        .foregroundColor(.black)
+                    TextField("0円", text: $titleTextField)
+                        .font(.system(size: 8))
+                        .frame(width: 50)
+                        .multilineTextAlignment(.center)
                 }
                 ZStack {
                     Rectangle()
                         .frame(width: 75, height: 15)
                         .foregroundColor(.white)
                         .border(.black, width: 1)
-                    Text("0円")
-                        .foregroundColor(.black)
+                    TextField("0円", text: $titleTextField)
+                        .font(.system(size: 8))
+                        .frame(width: 50)
+                        .multilineTextAlignment(.center)
                 }
                 ZStack {
                     Rectangle()
                         .frame(width: 75, height: 15)
                         .foregroundColor(.white)
                         .border(.black, width: 1)
-                    Text("0円")
-                        .foregroundColor(.black)
+                    TextField("0円", text: $titleTextField)
+                        .font(.system(size: 8))
+                        .frame(width: 50)
+                        .multilineTextAlignment(.center)
                 }
             }
         }
@@ -250,8 +249,10 @@ extension InvoiceView {
                             .frame(width: 112, height: 30)
                             .foregroundColor(.white)
                             .border(.black, width: 1)
-                        Text("2024-01-01")
-                            .foregroundColor(.black)
+                        TextField("2024-01-01", text: $titleTextField)
+                            .font(.system(size: 8))
+                            .frame(width: 50)
+                            .multilineTextAlignment(.center)
                     }
                     ZStack {
                         Rectangle()
@@ -366,6 +367,10 @@ extension InvoiceView {
                     Text("備考")
                         .foregroundColor(.black)
                         .font(.system(size: 8))
+                    TextField("備考を入力", text: $titleTextField)
+                        .font(.system(size: 8))
+                        .frame(width: 50)
+                        .multilineTextAlignment(.center)
                     Spacer()
                     HStack {
                         Text("内訳")
