@@ -23,6 +23,10 @@ struct InvoiceView: View {
     @State var remarksTextField: String = ""
     @State var subjectTextField: String = ""
     @State var titleTextField: String = ""
+    @State var subtotalTextField: String = ""
+    @State var summaryTextField: String = ""
+    @State var quantityTextField: String = ""
+    @State var unitPriceTextField: String = ""
     
     var body: some View {
         ScrollView {
@@ -107,7 +111,7 @@ extension InvoiceView {
                     .font(.system(size: 8))
             }
             VStack(alignment: .trailing, spacing: 0) {
-                TextField("請求日を入力", text: $paymentDueTextField)
+                TextField("請求日を入力", text: $billingDateTextField)
                     .multilineTextAlignment(.trailing)
                     .font(.system(size: 8))
                 TextField("請求書番号を入力", text: $invoiceNoTextField)
@@ -192,30 +196,24 @@ extension InvoiceView {
                         .frame(width: 75, height: 15)
                         .foregroundColor(.white)
                         .border(.black, width: 1)
-                    TextField("0円", text: $titleTextField)
-                        .font(.system(size: 8))
-                        .frame(width: 50)
-                        .multilineTextAlignment(.center)
+                    Text("100円")
+                        .foregroundColor(.black)
                 }
                 ZStack {
                     Rectangle()
                         .frame(width: 75, height: 15)
                         .foregroundColor(.white)
                         .border(.black, width: 1)
-                    TextField("0円", text: $titleTextField)
-                        .font(.system(size: 8))
-                        .frame(width: 50)
-                        .multilineTextAlignment(.center)
+                    Text("10円")
+                        .foregroundColor(.black)
                 }
                 ZStack {
                     Rectangle()
                         .frame(width: 75, height: 15)
                         .foregroundColor(.white)
                         .border(.black, width: 1)
-                    TextField("0円", text: $titleTextField)
-                        .font(.system(size: 8))
-                        .frame(width: 50)
-                        .multilineTextAlignment(.center)
+                    Text("110円")
+                        .foregroundColor(.black)
                 }
             }
         }
@@ -249,7 +247,7 @@ extension InvoiceView {
                             .frame(width: 112, height: 30)
                             .foregroundColor(.white)
                             .border(.black, width: 1)
-                        TextField("2024-01-01", text: $titleTextField)
+                        TextField("2024-01-01", text: $paymentDueTextField)
                             .font(.system(size: 8))
                             .frame(width: 50)
                             .multilineTextAlignment(.center)
@@ -261,10 +259,8 @@ extension InvoiceView {
                             .border(.black, width: 1)
                         Text("架空銀行　架空支店\n普通 口座番号 0000000\n株式会社hogehoge")
                             .foregroundColor(.black)
-                            .lineSpacing(-10)
                     }
                 }
-                
             }
             .font(.system(size: 8))
             Spacer()
@@ -282,7 +278,7 @@ extension InvoiceView {
                             .frame(width: width/2, height: 15)
                             .foregroundColor(.white)
                             .border(.black, width: 1)
-                        Text("概要")
+                        Text("摘要")
                             .foregroundColor(.black)
                     }
                     ZStack {
@@ -318,31 +314,37 @@ extension InvoiceView {
                                 .frame(width: width/2, height: 15)
                                 .foregroundColor(.white)
                                 .border(.black, width: 1)
-                            Text("")
-                                .foregroundColor(.black)
+                            TextField("example", text: $summaryTextField)
+                                .font(.system(size: 8))
+                                .frame(width: 50)
+                                .multilineTextAlignment(.center)
                         }
                         ZStack {
                             Rectangle()
                                 .frame(width: width/8, height: 15)
                                 .foregroundColor(.white)
                                 .border(.black, width: 1)
-                            Text("")
-                                .foregroundColor(.black)
+                            TextField("1", text: $quantityTextField)
+                                .font(.system(size: 8))
+                                .frame(width: 40)
+                                .multilineTextAlignment(.center)
                         }
                         ZStack {
                             Rectangle()
                                 .frame(width: width/8, height: 15)
                                 .foregroundColor(.white)
                                 .border(.black, width: 1)
-                            Text("")
-                                .foregroundColor(.black)
+                            TextField("10円", text: $unitPriceTextField)
+                                .font(.system(size: 8))
+                                .frame(width: 30)
+                                .multilineTextAlignment(.center)
                         }
                         ZStack {
                             Rectangle()
                                 .frame(width: width/4, height: 15)
                                 .foregroundColor(.white)
                                 .border(.black, width: 1)
-                            Text("")
+                            Text("10円")
                                 .foregroundColor(.black)
                         }
                     }
@@ -367,7 +369,7 @@ extension InvoiceView {
                     Text("備考")
                         .foregroundColor(.black)
                         .font(.system(size: 8))
-                    TextField("備考を入力", text: $titleTextField)
+                    TextField("備考を入力", text: $remarksTextField)
                         .font(.system(size: 8))
                         .frame(width: 50)
                         .multilineTextAlignment(.center)
@@ -385,10 +387,10 @@ extension InvoiceView {
                                 .font(.system(size: 8))
                         }
                         VStack(alignment: .leading) {
-                            Text("7777円")
+                            Text("100円")
                                 .foregroundColor(.black)
                                 .font(.system(size: 8))
-                            Text("777円")
+                            Text("10円")
                                 .foregroundColor(.black)
                                 .font(.system(size: 8))
                         }
