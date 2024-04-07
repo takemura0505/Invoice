@@ -156,55 +156,29 @@ extension InvoiceView {
     private var price: some View {
         VStack(spacing: -1) {
             HStack(spacing: -1) {
-                ZStack {
-                    Rectangle()
-                        .frame(width: 75, height: 10)
-                        .foregroundColor(.white)
-                        .border(.black, width: 1)
-                    Text("小計")
-                        .foregroundColor(.black)
-                }
-                ZStack {
-                    Rectangle()
-                        .frame(width: 75, height: 10)
-                        .foregroundColor(.white)
-                        .border(.black, width: 1)
-                    Text("消費税")
-                        .foregroundColor(.black)
-                }
-                ZStack {
-                    Rectangle()
-                        .frame(width: 75, height: 10)
-                        .foregroundColor(.white)
-                        .border(.black, width: 1)
-                    Text("請求金額")
-                        .foregroundColor(.black)
+                let text = ["小計", "消費税", "請求金額"]
+                ForEach(text, id: \.self) { text in
+                    ZStack {
+                        Rectangle()
+                            .frame(width: 75, height: 10)
+                            .foregroundColor(.white)
+                            .border(.black, width: 1)
+                        Text(text)
+                            .foregroundColor(.black)
+                    }
                 }
             }
             HStack(spacing: -1) {
-                ZStack {
-                    Rectangle()
-                        .frame(width: 75, height: 15)
-                        .foregroundColor(.white)
-                        .border(.black, width: 1)
-                    Text("100円")
-                        .foregroundColor(.black)
-                }
-                ZStack {
-                    Rectangle()
-                        .frame(width: 75, height: 15)
-                        .foregroundColor(.white)
-                        .border(.black, width: 1)
-                    Text("10円")
-                        .foregroundColor(.black)
-                }
-                ZStack {
-                    Rectangle()
-                        .frame(width: 75, height: 15)
-                        .foregroundColor(.white)
-                        .border(.black, width: 1)
-                    Text("110円")
-                        .foregroundColor(.black)
+                let text = ["100円", "10円", "110円"]
+                ForEach(text, id: \.self) { text in
+                    ZStack {
+                        Rectangle()
+                            .frame(width: 75, height: 15)
+                            .foregroundColor(.white)
+                            .border(.black, width: 1)
+                        Text(text)
+                            .foregroundColor(.black)
+                    }
                 }
             }
         }
@@ -215,41 +189,29 @@ extension InvoiceView {
         HStack {
             VStack(spacing: -1) {
                 HStack(spacing: -1) {
-                    ZStack {
-                        Rectangle()
-                            .frame(width: 112, height: 10)
-                            .foregroundColor(.white)
-                            .border(.black, width: 1)
-                        Text("入金期日")
-                            .foregroundColor(.black)
-                    }
-                    ZStack {
-                        Rectangle()
-                            .frame(width: 112, height: 10)
-                            .foregroundColor(.white)
-                            .border(.black, width: 1)
-                        Text("振込先")
-                            .foregroundColor(.black)
+                    let text = ["入金期日", "振込先"]
+                    ForEach(text, id: \.self) { text in
+                        ZStack {
+                            Rectangle()
+                                .frame(width: 130, height: 10)
+                                .foregroundColor(.white)
+                                .border(.black, width: 1)
+                            Text(text)
+                                .foregroundColor(.black)
+                        }
                     }
                 }
                 HStack(spacing: -1) {
-                    ZStack {
-                        Rectangle()
-                            .frame(width: 112, height: 30)
-                            .foregroundColor(.white)
-                            .border(.black, width: 1)
-                        TextField("2024-01-01", text: $paymentDueTextField)
-                            .font(.system(size: 8))
-                            .frame(width: 50)
-                            .multilineTextAlignment(.center)
-                    }
-                    ZStack {
-                        Rectangle()
-                            .frame(width: 112, height: 30)
-                            .foregroundColor(.white)
-                            .border(.black, width: 1)
-                        Text("架空銀行　架空支店\n普通 口座番号 0000000\n株式会社hogehoge")
-                            .foregroundColor(.black)
+                    let text = ["2024-01-01", "架空銀行　架空支店\n普通 口座番号 0000000\n株式会社hogehoge"]
+                    ForEach(text, id: \.self) { text in
+                        ZStack {
+                            Rectangle()
+                                .frame(width: 130, height: 30)
+                                .foregroundColor(.white)
+                                .border(.black, width: 1)
+                            Text(text)
+                                .foregroundColor(.black)
+                        }
                     }
                 }
             }
@@ -264,37 +226,20 @@ extension InvoiceView {
             let width = geometry.size.width - 20
             VStack(spacing: -1) {
                 HStack(spacing: -1) {
-                    ZStack {
-                        Rectangle()
-                            .frame(width: width/2, height: 15)
-                            .foregroundColor(.white)
-                            .border(.black, width: 1)
-                        Text("摘要")
-                            .foregroundColor(.black)
-                    }
-                    ZStack {
-                        Rectangle()
-                            .frame(width: width/8, height: 15)
-                            .foregroundColor(.white)
-                            .border(.black, width: 1)
-                        Text("数量")
-                            .foregroundColor(.black)
-                    }
-                    ZStack {
-                        Rectangle()
-                            .frame(width: width/8, height: 15)
-                            .foregroundColor(.white)
-                            .border(.black, width: 1)
-                        Text("単価")
-                            .foregroundColor(.black)
-                    }
-                    ZStack {
-                        Rectangle()
-                            .frame(width: width/4, height: 15)
-                            .foregroundColor(.white)
-                            .border(.black, width: 1)
-                        Text("明細金額")
-                            .foregroundColor(.black)
+                    let textArray = ["摘要", "数量", "単価", "明細金額"]
+                    let widthNumber = [width/2, width/7.5, width/7.5, width/4]
+                    HStack(spacing: -1) {
+                        ForEach(Array(textArray.indices), id: \.self) { index in
+                            let text = textArray[index]
+                            ZStack {
+                                Rectangle()
+                                    .frame(width: widthNumber[index], height: 15)
+                                    .foregroundColor(.white)
+                                    .border(.black, width: 1)
+                                Text(text)
+                                    .foregroundColor(.black)
+                            }
+                        }
                     }
                 }
                 .font(.system(size: 8))
@@ -312,7 +257,7 @@ extension InvoiceView {
                         }
                         ZStack {
                             Rectangle()
-                                .frame(width: width/8, height: 15)
+                                .frame(width: width/7.5, height: 15)
                                 .foregroundColor(.white)
                                 .border(.black, width: 1)
                             TextField("1", text: $quantityTextField)
@@ -322,7 +267,7 @@ extension InvoiceView {
                         }
                         ZStack {
                             Rectangle()
-                                .frame(width: width/8, height: 15)
+                                .frame(width: width/7.5, height: 15)
                                 .foregroundColor(.white)
                                 .border(.black, width: 1)
                             TextField("10円", text: $unitPriceTextField)
